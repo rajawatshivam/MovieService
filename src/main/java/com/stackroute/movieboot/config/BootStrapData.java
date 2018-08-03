@@ -23,10 +23,16 @@ public class BootStrapData implements ApplicationListener<ContextRefreshedEvent>
 	@Override
 	public void onApplicationEvent(ContextRefreshedEvent event) {
 		Movie movie = new Movie();
+		movie.setMovieId(1);
 		movie.setMovieTitle("logan");
+		movie.setMovieRating("five");
+		movie.setYearOfRelease(2018);
 		movieRepository.save(movie);
 		Movie testMovie = Movie.builder()
+							.movieId(1)
 				 			.movieTitle("foo")
+				 			.movieRating("five")
+				 		    .yearOfRelease(2018)
 				 			.build();
 		movieRepository.save(testMovie);
 	}

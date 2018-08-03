@@ -12,7 +12,6 @@ import com.stackroute.movieboot.exception.MovieNotFoundException;
 import com.stackroute.movieboot.repository.MovieRepository;
 
 @Service
-@Primary
 public class MovieServicesDummyImpl implements MovieService {
 
 	private MovieRepository movieRepository;
@@ -52,10 +51,10 @@ public class MovieServicesDummyImpl implements MovieService {
 		return null;
 	}
 
-	@Override
-	public List<Movie> getMovieByTitle(String movieTitle) {
-		System.out.println("getting by title");
-		return null;
-	}
+//	@Override
+//	public List<Movie> getMovieByTitle(String movieTitle) {
+//		System.out.println("getting by title");
+//		return null;
+//	}
 
 }

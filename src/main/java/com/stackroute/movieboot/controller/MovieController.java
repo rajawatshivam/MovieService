@@ -3,7 +3,6 @@ package com.stackroute.movieboot.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,14 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.stackroute.movieboot.domain.Movie;
 import com.stackroute.movieboot.exception.MovieNotFoundException;
 import com.stackroute.movieboot.services.MovieService;
-import com.stackroute.movieboot.services.MovieServicesImpl;
 
 @RestController
 @RequestMapping("/api/v1/")
 public class MovieController {
 	
-	@Qualifier("MovieServicesDummyImpl")
-	@Autowired
 	private MovieService movieService;
 
 	@Autowired
@@ -73,14 +69,14 @@ public class MovieController {
 		return new ResponseEntity<Movie>(movieObj, HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "searchName/movie/{mname}", method = RequestMethod.GET, produces = "application/json")
-	public ResponseEntity<?> getMovieByTitle(@PathVariable String mname) {
-		List<Movie> movieList = movieService.getMovieByTitle(mname);
-		if (!movieList.isEmpty())
-			return new ResponseEntity<List<Movie>>(movieList, HttpStatus.OK);
-		else
-			return new ResponseEntity<String>("Movie not present by that name", HttpStatus.NOT_FOUND);
-	}
+//	@RequestMapping(value = "searchName/movie/{mname}", method = RequestMethod.GET, produces = "application/json")
+//	public ResponseEntity<?> getMovieByTitle(@PathVariable String mname) {
+//		List<Movie> movieList = movieService.getMovieByTitle(mname);
+//		if (!movieList.isEmpty())
+//			return new ResponseEntity<List<Movie>>(movieList, HttpStatus.OK);
+//		else
+//			return new ResponseEntity<String>("Movie not present by that name", HttpStatus.NOT_FOUND);
+//	}
 	// @RequestMapping(value="sNBR/movie/{mname}" , method=RequestMethod.GET ,
 	// produces="application/json")
 	// public ResponseEntity<?> getMovieByRating(@PathVariable String movieRating){

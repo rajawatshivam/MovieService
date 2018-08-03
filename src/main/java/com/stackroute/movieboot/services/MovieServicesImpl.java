@@ -60,11 +60,11 @@ public class MovieServicesImpl implements MovieService {
 	// Optional<Movie> movie=movieRepository.findById(movieTitle);
 	// return movie.get();
 	// }
-	@Override
-	public List<Movie> getMovieByTitle(String movieTitle) {
-		List<Movie> movieList = movieRepository.getMovieByTitle(movieTitle);
-		return movieList;
-	}
+//	@Override
+//	public List<Movie> getMovieByTitle(String movieTitle) {
+//		List<Movie> movieList = movieRepository.getMovieByTitle(movieTitle);
+//		return movieList;
+//	}
 
 	// @Override
 	// public List<Movie> getMovieByRating(String movieRating) {

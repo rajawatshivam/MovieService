@@ -17,7 +17,7 @@ public interface MovieService {
 
 	public Movie getMovieById(int movieId) throws MovieNotFoundException;
 
-	public List<Movie> getMovieByTitle(String movieTitle);
+	//public List<Movie> getMovieByTitle(String movieTitle);
 
 	//public List<Movie> getMovieByRating(String movieRating);
 }
